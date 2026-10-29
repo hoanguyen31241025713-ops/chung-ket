@@ -180,7 +180,7 @@ h3{font-size:15px;margin:26px 0 8px;font-weight:600}
 
 <div class="wrap" id="game" hidden>
   <h1>Chung kết xếp hạng hoa cưới 🏆</h1>
-  <p class="lead">Chị iu Sao Mai đã chọn xuất sắc chọn ra 10 mẫu hoa vào chung kết! Giờ xếp từ ưng nhất tới ít ưng hơn nha 😎</p>
+  <p class="lead">Chị iu Sao Mai đã xuất sắc chọn ra 10 mẫu hoa vào chung kết! Giờ xếp từ ưng nhất tới ít ưng hơn nha 😎</p>
 
   <div class="how"><ol>
     <li>Chạm 1 lần là chọn, chạm lần nữa là bỏ chọn</li>
@@ -248,7 +248,7 @@ function medal(p){return p===1?"🥇":p===2?"🥈":p===3?"🥉":""}
 
 function noteLine(id){
   var m=BY[id];
-  if(editMode) return '<label class="nl"><span class="nh">📝 Lưu ý cho '+m.n+'</span><span class="ex">VD: thích mẫu này nhưng muốn đổi màu xanh pastel, làm nhỏ gọn hơn, thêm ngọc trai…</span><textarea class="nin" data-id="'+id+'" rows="3" maxlength="300" placeholder="Chị gõ lưu ý ở đây nha…">'+esc(notes[id]||"")+'</textarea></label>';
+  if(editMode) return '<label class="nl"><span class="nh">📝 Lưu ý cho '+m.n+'</span><span class="ex">VD: thích mẫu này nhưng muốn đổi màu xanh pastel, làm nhỏ gọn hơn, thêm ngọc trai…</span><textarea class="nin" data-id="'+id+'" rows="3" maxlength="300" placeholder="Chị iu note lưu ý dô đây nè…">'+esc(notes[id]||"")+'</textarea></label>';
   return notes[id]?'<div class="nshow"><b>📝 '+m.n+':</b> '+esc(notes[id])+'</div>':"";
 }
 function rowHTML(t,pos,mini){
@@ -272,7 +272,7 @@ function render(){
   $("q").innerHTML='Chọn mẫu <b>ưng nhất</b> · HẠNG '+next;
   $("hint").textContent=rem.length===1?"Mẫu cuối cùng nè, bấm chốt là xong 🎉":ranked.length?"Trong số còn lại, mẫu nào ưng nhất? (ưng ngang nhau thì chọn 2–3 mẫu)":"Ưng ngang nhau thì chọn luôn 2–3 mẫu cùng lúc (đồng hạng) 🤝";
   $("grid").innerHTML=rem.map(function(m){
-    return '<div class="opt'+(sel.indexOf(m.id)>-1?' on':'')+'" data-id="'+m.id+'"><button class="pk" data-id="'+m.id+'"><img alt="'+m.n+'" src="'+m.img+'"><span class="tag">'+m.n+'</span><span class="chk">✓</span><span class="zoom" data-z="'+m.id+'" role="button" aria-label="Phóng to">🔍</span><span class="mat">'+m.c+'</span></button><label class="nb"><span class="nh">📝 Lưu ý cho mẫu này</span><span class="ex">VD: thích mẫu này nhưng muốn màu khác, nhỏ gọn hơn…</span><textarea class="nin" data-id="'+m.id+'" rows="3" maxlength="300" placeholder="Chị gõ lưu ý ở đây nha…">'+esc(notes[m.id]||"")+'</textarea></label></div>';
+    return '<div class="opt'+(sel.indexOf(m.id)>-1?' on':'')+'" data-id="'+m.id+'"><button class="pk" data-id="'+m.id+'"><img alt="'+m.n+'" src="'+m.img+'"><span class="tag">'+m.n+'</span><span class="chk">✓</span><span class="zoom" data-z="'+m.id+'" role="button" aria-label="Phóng to">🔍</span><span class="mat">'+m.c+'</span></button><label class="nb"><span class="nh">📝 Lưu ý cho mẫu này</span><span class="ex">VD: thích mẫu này nhưng muốn màu khác, nhỏ gọn hơn…</span><textarea class="nin" data-id="'+m.id+'" rows="3" maxlength="300" placeholder="Chị iu note lưu ý dô đây nè…">'+esc(notes[m.id]||"")+'</textarea></label></div>';
   }).join("");
   $("sofar").hidden=!ranked.length; $("sofarList").innerHTML=listHTML(true);
   bar(next,rem.length);
